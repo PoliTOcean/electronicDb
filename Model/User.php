@@ -36,7 +36,7 @@ class User {
 			// back end validaion
 			$reg_email	= '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';	// gmail mail format
 			$reg_pass		= '/^(?=.{3})(?=.*[^0-9a-zA-Z])/';										// allowed passwords must be at least 3 characters long, including
-																																				// digits, characters and special characters 
+																																				// digits, characters and special characters
 
 			if (!preg_match ( $reg_email, $email ) || strlen ( $email ) == 0 || strlen ( $email ) > 50) {
 				throw new Exception ( "Uncorrect email address" );
@@ -66,7 +66,7 @@ class User {
 				$_SESSION['username'] = $res["email"];
 				$_SESSION['last_activity'] = time();
 				mysqli_close($conn);
-				header("Location: PersonalPage.php");
+				header("Location: Components.php");
 			}
 		}catch ( Exception $e ){
 			mysqli_rollback ( $conn );
@@ -76,6 +76,7 @@ class User {
 
 
 
+		}
 	}
 
  ?>
