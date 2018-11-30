@@ -11,7 +11,7 @@ function customErrorAlert(msg){
 
   div.setAttribute("class", "alert alert-danger alert-dismissible");  // set the `alert` class in order to
                                                                       // apply the bootstrap css
-  div.setAttribute("role", "alert");                                  // set the `role` attribute
+  div.setAttribute("role", "alert");                                 // set the `role` attribute
   strong.setAttribute("id","alert_strong");                           // set the strong id
   p.setAttribute("id","alert_p");                                     // set the p id
   strong.innerHTML = "Error!";                                        // add text in `strong`
