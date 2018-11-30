@@ -2,8 +2,28 @@
 
 	class Component {
 
+		public $id;
+		public $name;
+		public $package;
+		public $box;
+		public $cell;
+		public $quantity;
+		public $note;
+		public $link;
+
 		public function __construct(){
-			// empty constructor
+			if (0 === func_num_args()) {
+	            // empty components
+	    } else{
+				$this->id		= func_get_arg(0);
+				$this->name 	= func_get_arg(1);
+				$this->package	= func_get_arg(2);
+				$this->box		= func_get_arg(3);
+				$this->cell	= func_get_arg(4);
+				$this->quantity = func_get_arg(5);
+				$this->note = func_get_arg(6);
+				$this->link = func_get_arg(7);
+			}
 		}
 
 		// store a brick in the database

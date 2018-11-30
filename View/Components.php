@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PoliTOceanDB</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> <!-- BOOTSTRAP -->
-    <link rel="stylesheet" type="text/css" href="css/Table.css">  <!-- TABLE -->
     <link rel="stylesheet"href="css/shop-item.css" >  <!-- TEMPLATE -->
   </head>
 
   <body>
 
     <?php
-      include '../Control/commonFunctions.php';
+      include '../Control/Components_controller.php';
       // manage the page in the controller
       //main_controller();
     ?>
@@ -49,11 +48,15 @@
       <div class="row"> <!-- place elements in a row -->
 
         <div class="col-sm-12">
+          <div class="card-container">
+            <div class="card-body">
           <?php
-          //renderTable(); // fill the page with the table
+          renderTable(); // fill the page with the table
           //checkParam(); // check if the are messages inside the url (GET)
-          echo "...place the content here..."
+          //echo "...place the content here..."
            ?>
+         </div>
+         </div>
           <div id="alert_placeholder"></div> <!-- dynamic alerts generated through javascript -->
            <noscript> <!-- if javascript is disabled alert the user -->
              <div class="alert alert-warning" role="alert">
@@ -89,6 +92,7 @@
     <!-- javascript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
     <script>
     // automaticcaly close bottom aletrs after 6 seconds
     window.setTimeout(function() {
@@ -101,6 +105,7 @@
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     })
+
     </script>
   </body>
 </html>

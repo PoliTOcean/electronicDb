@@ -42,5 +42,38 @@
     return $return;
   }
 
+  function retrieveComponents(){
+    $return = 0;
+    $conn = createConnection();
+    $array = array();
+    $query = "SELECT * FROM Components";
+
+    if (! $res = mysqli_query ( $conn, $query )) {
+			$return = -1;
+		}
+
+    if(mysqli_num_rows($res)!= 0){
+      while($row = mysqli_fetch_array($res)){
+        $brick = new component(
+                          $row["id"],
+                          $row["name"],
+                          $row["package"],
+                          $row["box"],
+                          $row["cell"],
+                          $row["quantity"],
+                          $row["note"],
+                          $row["link"]
+                      ); // create a component
+      array_push($array,$brick);
+      }
+      $return = $array;
+    }else{
+      $return = 0;
+    }
+
+    mysqli_free_result ( $res );
+    return $array;
+  }
+
 
 ?>
