@@ -57,7 +57,7 @@
             	<form method="POST" action='NewComponent.php' onsubmit="return true">
             	  <div class="form-group">
             	      <div class="input-group">
-            		        <input id="inputNme" name="name" class="form-control form-in" placeholder="Name" type="text" required autofocus>
+            		        <input id="inputName" name="name" class="form-control form-in" placeholder="Name" type="text" required autofocus>
             	      </div> <!-- input-group.// -->
             	  </div> <!-- form-group// -->
                 <div class="form-group">
