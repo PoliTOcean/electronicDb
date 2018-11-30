@@ -25,15 +25,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto"> <!-- links in the navbar -->
-            <li class="nav-item active">
-              <a class="nav-link" href="">Components</a>
+            <li class="nav-item">
+              <a class="nav-link" href="Components.php">Components</a>
             </li>
-            <li class="nav-item"> <!-- move to the log in page -->
+            <li class="nav-item active"> <!-- move to the log in page -->
               <a class="nav-link" href="#">New Component</a>
               <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item"> <!-- move to the Sign up page -->
-              <a class="nav-link" href="LogOut.php">Log out</a>
+              <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">Log out</a>
             </li>
           </ul>
         </div>
@@ -104,6 +104,27 @@
         </div> <!-- END LOG IN FORM -->
       </div> <!-- END SECOND ELEMENT -->
     </div> <!-- END THE ROW -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log out</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to log out?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href = '../Control/LogOut_controller.php';" >Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div><!-- END THE PAGE CONTAINER -->
 
 
@@ -119,6 +140,11 @@
           $(this).remove();
       });
     }, 6000);
+
+    // manage the animation of the exit modal
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
     </script>
 
   </body>

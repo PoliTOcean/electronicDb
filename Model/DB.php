@@ -27,7 +27,7 @@
 
   function searchUser($email,$conn){
     $return = 0;
-    $query = "SELECT * FROM Users WHERE email ='$email'";
+    $query = "SELECT * FROM User WHERE email ='$email'";
 
 		if (! $res = mysqli_query ( $conn, $query )) {
 			$return = -1;

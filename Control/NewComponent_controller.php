@@ -5,7 +5,7 @@ include '../Model/DB.php';
 include 'commonFunctions.php';
 
 function main_controller(){
-  httpsRedirect();  // redirect on HTTPS
+  //httpsRedirect();  // redirect on HTTPS
   session_start();
   checkCookies();   // check if Coockies are enabled
 

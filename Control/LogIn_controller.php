@@ -5,7 +5,7 @@ include '../Model/DB.php';
 include 'commonFunctions.php';
 
 function main_controller(){
-  httpsRedirect();  // redirect on HTTPS
+  //httpsRedirect();  // redirect on HTTPS
   session_start();
   checkCookies();   // check if Coockies are enabled
 
@@ -29,6 +29,11 @@ function checkParam(){
      echo ' <strong>Error!</strong> Wrong password.';
      echo '</div>';
    }
+   else if($mex == 'session_end'){
+     echo '<div class="alert alert-success alert-dismissible" role="alert">';
+     echo '  <strong>Ok!</strong> Session ended correctly.';
+     echo '</div>';
+    }
   }
 }
  ?>
