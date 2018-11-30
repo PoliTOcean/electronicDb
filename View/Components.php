@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto"> <!-- links in the navbar -->
-            <li class="nav-item active"> <!-- empty link -->
+            <li class="nav-item active">
               <a class="nav-link" href="">
                 Components
                 <span class="sr-only">(current)</span>

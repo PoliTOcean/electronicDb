@@ -26,15 +26,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="HomePage.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="LogIn.php">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="SignUp.php">Sign Up</a>
-            </li>
           </ul>
         </div>
       </div>

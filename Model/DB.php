@@ -1,7 +1,7 @@
 <?php
 
   function createConnection(){
-    if( !$conn = mysqli_connect ( "localhost", "root", "", "Bricks" )) {
+    if( !$conn = mysqli_connect ( "localhost", "root", "", "my_dbpolitocean" )) {
       header ( 'HTTP/1.1 307 temporary redirect' );
       header ( "Location: ErrorPage.php?msg=connection failed:".mysqli_connect_error());
     }
