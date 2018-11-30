@@ -7,6 +7,7 @@
     <title>PoliTOceanDB</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> <!-- BOOTSTRAP -->
     <link rel="stylesheet"href="css/shop-item.css" >  <!-- TEMPLATE -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   </head>
 
   <body>

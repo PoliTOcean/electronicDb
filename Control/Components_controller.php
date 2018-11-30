@@ -37,11 +37,13 @@
         echo "  <td>".$component->quantity."</td>";
         echo "  <td>".$component->note."</td>";
         if($component->link != ''){
-          echo "  <td><a class='btn btn-primary' href='".$component->link."'role='button'>Link</a></td>";
+          echo "  <td><a class='btn btn-primary' target='_blank' rel='noopener noreferrer' href='".$component->link."'role='button'>";
+          echo "  <i class='material-icons'>link</i>";
+          echo "</a></td>";
         }else{
           echo "  <td></td>";
         }
-        echo "  <td><a class='btn btn-warning' href='' role='button'>Edit</a></td>";
+        echo "  <td><a class='btn btn-warning' href='' role='button'><i class='material-icons'>edit</i></a></td>";
         echo "</tr>";
       }
     echo "</table>";
