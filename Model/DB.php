@@ -42,6 +42,23 @@
     return $return;
   }
 
+  function searchComponent($identifier,$conn){
+    $return = 0;
+    $query = "SELECT * FROM Components WHERE id ='$identifier'";
+
+		if (! $res = mysqli_query ( $conn, $query )) {
+			$return = -1;
+		}
+
+		if (mysqli_num_rows ( $res ) != 0) {
+			$return = mysqli_fetch_array($res);
+		}else{
+      $return = 0;
+    }
+		mysqli_free_result ( $res );
+    return $return;
+  }
+
   function retrieveComponents(){
     $return = 0;
     $conn = createConnection();
