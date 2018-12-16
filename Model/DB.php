@@ -42,6 +42,26 @@
     return $return;
   }
 
+  function updatecomponent($conn){
+    $id = _sanitize($_POST["id"]);
+    $name = _sanitize($_POST["name"]);
+    $package = _sanitize($_POST["package"]);
+    $box = _sanitize($_POST["box"]);
+    $cell = _sanitize($_POST["cell"]);
+    $note = _sanitize($_POST["note"]);
+    $link = _sanitize($_POST["link"]);
+
+    $sql = "UPDATE Components SET name='".$name."' ,package='".$package."' ,box='".$box."' ,cell='".$cell."' ,note='".$note."' ,link='".$link."' WHERE id='".$id."'";
+    if (! $res= mysqli_query($conn,$sql)) {
+        $ret=0;
+    } else {
+        $ret=1;
+    }
+
+    $conn->close();
+    return $ret;
+  }
+
   function searchComponent($identifier,$conn){
     $return = 0;
     $query = "SELECT * FROM Components WHERE id ='$identifier'";

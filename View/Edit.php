@@ -12,11 +12,11 @@
 
   <body>
     <?php
-      include '../Control/NewComponent_controller.php';
+      include '../Control/Edit_controller.php';
       // manage the page in the controller
       main_controller();
 
-      if($_SERVER['REQUEST_METHOD'] === 'GET'){
+      if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])){
         // search the Component
         $id = urldecode ( $_GET ["id"] );
         $id = _sanitize($id);
@@ -65,15 +65,19 @@
 
               <?php // TODO: perform validation also client side via javascript simply calling a function in the onsubmit="" field ?>
             	<form method="POST" action='Edit.php' onsubmit="return true">
-                <input id="id" name="id" type="hidden" vlaue="<?php echo $component['id'] ?>" required>
+                <div class="form-group">
+            	      <div class="input-group">
+            		        <input id="inputid" name="id" class="form-control form-in" placeholder="id" type="text" value="<?php echo $component['id'] ?>"  autofocus>
+            	      </div> <!-- input-group.// -->
+            	  </div> <!-- form-group// -->
             	  <div class="form-group">
             	      <div class="input-group">
-            		        <input id="inputName" name="name" class="form-control form-in" placeholder="Name" type="text" value="<?php echo $component['name'] ?>" required autofocus>
+            		        <input id="inputName" name="name" class="form-control form-in" placeholder="Name" type="text" value="<?php echo $component['name'] ?>"  autofocus>
             	      </div> <!-- input-group.// -->
             	  </div> <!-- form-group// -->
                 <div class="form-group">
             	      <div class="input-group">
-            		        <input id="inputPackage" name="package" class="form-control form-in" placeholder="Package" type="text" value="<?php echo $component['package'] ?>" required autofocus>
+            		        <input id="inputPackage" name="package" class="form-control form-in" placeholder="Package" type="text" value="<?php echo $component['package'] ?>"  >
             	      </div> <!-- input-group.// -->
             	  </div> <!-- form-group// -->
                 <div class="form-group">

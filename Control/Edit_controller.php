@@ -10,9 +10,14 @@ function main_controller(){
   checkCookies();   // check if Coockies are enabled
 
   if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
-    $new_component = new component();  // create a new user
-    $new_component -> store();   //insert the new component in the db
-    header ( "Location: NewComponent.php?msg=ok");
+    $conn = createConnection();
+    $retvalute = updatecomponent($conn);
+    if($retvalute == 1){
+      header ( "Location: Edit.php?msg=ok");
+    }else{
+      errorRedirector("an error occourred while updating");
+    }
+
   }
 }
 
@@ -24,7 +29,7 @@ function checkParam(){
     $mex = _sanitize($mex);
     if($mex == 'ok'){
       echo '<div class="alert alert-success alert-dismissible" role="alert">';
-      echo '  <strong>Ok!</strong> New component created correctly.';
+      echo '  <strong>Ok!</strong> Component updated correctly.';
       echo '</div>';
     }
   }
