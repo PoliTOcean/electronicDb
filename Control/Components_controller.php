@@ -14,7 +14,7 @@
     $components = retrieveComponents();
 
     echo "<div class='table-responsive'>";
-    echo "  <table id='myTable' class=' table table-striped table-bordered col-sm-12' id='table'>";
+    echo "  <table id='myTable' class=' table table-bordered col-sm-12' id='table'>";
     echo "    <thead> ";
     echo "      <tr> ";
     echo "        <th>Name</th>";
@@ -43,7 +43,7 @@
         }else{
           echo "  <td></td>";
         }
-        echo "  <td><a class='btn btn-warning' href='' role='button'><i class='material-icons'>edit</i></a></td>";
+        echo "  <td><a class='btn btn-warning' href='Edit.php?id=".$component->id."' role='button'><i class='material-icons'>edit</i></a></td>";
         echo "</tr>";
       }
     echo "</table>";

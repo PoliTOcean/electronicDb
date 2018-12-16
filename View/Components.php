@@ -46,17 +46,30 @@
 
     <!-- Page Content -->
     <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="">
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Search component</span>
+                </div>
+                <input type="text"  id="myInput" class="form-control"  onkeyup="search()"aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row"> <!-- place elements in a row -->
-
         <div class="col-sm-12">
           <div class="card-container">
             <div class="card-body">
-          <?php
-          renderTable(); // fill the page with the table
-          //checkParam(); // check if the are messages inside the url (GET)
-          //echo "...place the content here..."
-           ?>
-         </div>
+              <?php
+              renderTable(); // fill the page with the table
+              //checkParam(); // check if the are messages inside the url (GET)
+              //echo "...place the content here..."
+               ?>
+            </div>
          </div>
           <div id="alert_placeholder"></div> <!-- dynamic alerts generated through javascript -->
            <noscript> <!-- if javascript is disabled alert the user -->
@@ -107,6 +120,28 @@
       $('#myInput').trigger('focus')
     })
 
+    // TABLE SEARCH FUNCTION
+    function search() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
     </script>
   </body>
 </html>
