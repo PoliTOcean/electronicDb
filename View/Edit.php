@@ -22,9 +22,10 @@
         $id = _sanitize($id);
         $conn = createConnection();
         $component = searchComponent($id,$conn);
-        if($component == -1) errorRedirector("error while searching user". $this->mail );
-        if($component == 0) errorRedirector("the searched component is not present in the system". $this->mail );
+        if($component == -1) errorRedirector("error while searching component" );
+        if($component == 0) errorRedirector("the searched component is not present in the system");
       }
+
     ?>
     <!-- Bootstrap navbar with responsive configuration -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -58,7 +59,7 @@
           <div class="card-container"> <!-- LOG IN FORM -->
           <div class="card">
             <article class="card-body">
-            	<h4 class="card-title text-center mb-4 mt-1">Insert a new component</h4>
+            	<h4 class="card-title text-center mb-4 mt-1">Edit component</h4>
             	<hr>
               <!-- edit it with javascript -->
             	<p id="error-message" style="display: none;" class="text-danger text-center"></p>
@@ -67,7 +68,7 @@
             	<form method="POST" action='Edit.php' onsubmit="return true">
                 <div class="form-group">
             	      <div class="input-group">
-            		        <input id="inputid" name="id" class="form-control form-in" placeholder="id" type="text" value="<?php echo $component['id'] ?>"  disabled>
+            		        <input id="inputid" name="id" class="form-control form-in" placeholder="id" type="hidden" value="<?php echo $component['id'] ?>" >
             	      </div> <!-- input-group.// -->
             	  </div> <!-- form-group// -->
             	  <div class="form-group">
