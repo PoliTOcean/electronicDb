@@ -67,7 +67,7 @@
             	<form method="POST" action='Edit.php' onsubmit="return true">
                 <div class="form-group">
             	      <div class="input-group">
-            		        <input id="inputid" name="id" class="form-control form-in" placeholder="id" type="text" value="<?php echo $component['id'] ?>"  autofocus>
+            		        <input id="inputid" name="id" class="form-control form-in" placeholder="id" type="text" value="<?php echo $component['id'] ?>"  disabled>
             	      </div> <!-- input-group.// -->
             	  </div> <!-- form-group// -->
             	  <div class="form-group">

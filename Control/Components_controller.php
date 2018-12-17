@@ -14,8 +14,8 @@
     $components = retrieveComponents();
 
     echo "<div class='table-responsive'>";
-    echo "  <table id='myTable' class=' table table-bordered col-sm-12' id='table'>";
-    echo "    <thead> ";
+    echo "  <table id='myTable' class=' table table-bordered table-sm col-sm-12' id='table'>";
+    echo "    <thead class='thead-light'> ";
     echo "      <tr> ";
     echo "        <th>Name</th>";
     echo "        <th>Package</th>";
