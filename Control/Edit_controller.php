@@ -13,7 +13,7 @@ function main_controller(){
     $conn = createConnection();
     $retvalute = updatecomponent($conn);
     if($retvalute == 1){
-      header ( "Location: Edit.php?msg=ok");
+      header ( "Location: Edit.php?msg=ok&id=".$_POST["id"]);
     }else{
       errorRedirector("an error occourred while updating");
     }

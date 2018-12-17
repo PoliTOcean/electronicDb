@@ -60,6 +60,15 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <?php
+          checkParam(); // check if the are messages inside the url (GET)
+           ?>
+        </div>
+     </div>
+
       <div class="row"> <!-- place elements in a row -->
         <div class="col-sm-12">
           <div class="card-container">

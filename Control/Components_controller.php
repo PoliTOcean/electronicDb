@@ -25,6 +25,7 @@
     echo "        <th>Notes</th>";
     echo "        <th>Link</th>";
     echo "        <th>Edit</th>";
+    echo "        <th>Deleate</th>";
     echo "      </tr>";
     echo "    </thead>";
       foreach ($components as $key => $component) { // for each component in the db
@@ -44,11 +45,25 @@
           echo "  <td></td>";
         }
         echo "  <td><a class='btn btn-warning' href='Edit.php?id=".$component->id."' role='button'><i class='material-icons'>edit</i></a></td>";
+        echo "  <td><a class='btn btn-danger' href='Delete.php?id=".$component->id."' role='button'><i class='material-icons'>close</i></a></td>";
         echo "</tr>";
       }
     echo "</table>";
     echo "</div>";
 
+  }
+
+
+  function checkParam(){
+    if (isset ( $_GET ["msg"] )) {
+      $mex = urldecode ( $_GET ["msg"] );
+      $mex = _sanitize($mex);
+      if($mex == 'ok'){
+        echo '<div class="alert alert-success alert-dismissible" role="alert">';
+        echo '  <strong>Ok!</strong> Component deleted correctly.';
+        echo '</div>';
+      }
+    }
   }
 
 ?>

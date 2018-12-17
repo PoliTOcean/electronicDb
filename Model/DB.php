@@ -48,10 +48,11 @@
     $package = _sanitize($_POST["package"]);
     $box = _sanitize($_POST["box"]);
     $cell = _sanitize($_POST["cell"]);
+    $quantity = _sanitize($_POST["quantity"]);
     $note = _sanitize($_POST["note"]);
     $link = _sanitize($_POST["link"]);
 
-    $sql = "UPDATE Components SET name='".$name."' ,package='".$package."' ,box='".$box."' ,cell='".$cell."' ,note='".$note."' ,link='".$link."' WHERE id='".$id."'";
+    $sql = "UPDATE Components SET name='".$name."' ,package='".$package."' ,box='".$box."' ,cell='".$cell."' ,quantity='".$quantity."' ,note='".$note."' ,link='".$link."' WHERE id='".$id."'";
     if (! $res= mysqli_query($conn,$sql)) {
         $ret=0;
     } else {
@@ -76,6 +77,20 @@
       $return = 0;
     }
 		mysqli_free_result ( $res );
+    return $return;
+  }
+
+  function deleteComponent($conn,$identifier){
+    $return = 0;
+    $query = "DELETE  FROM Components WHERE id ='$identifier'";
+
+    if (!$res = mysqli_query ( $conn, $query )) {
+      $return = 0;
+    }else{
+      $return = 1;
+    }
+
+    //mysqli_free_result ( $res );
     return $return;
   }
 
