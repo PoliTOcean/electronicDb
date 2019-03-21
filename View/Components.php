@@ -110,6 +110,8 @@
           </div>
         </div>
       </div>
+
+    
     </div> <!-- END THE PAGE CONTAINER -->
 
     <!-- javascript -->
@@ -128,6 +130,8 @@
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     })
+
+
 
     // TABLE SEARCH FUNCTION
     function search() {

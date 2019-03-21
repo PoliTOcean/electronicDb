@@ -24,6 +24,8 @@
     echo "        <th>Quantity</th>";
     echo "        <th>Notes</th>";
     echo "        <th>Link</th>";
+    echo "        <th>+1</th>";
+    echo "        <th>-1</th>";
     echo "        <th>Edit</th>";
     echo "        <th>Deleate</th>";
     echo "      </tr>";
@@ -44,6 +46,8 @@
         }else{
           echo "  <td></td>";
         }
+        echo "  <td><a class='btn btn-success' href='Increase.php?id=".$component->id."&quantity=".$component->quantity."' role='button'><i class='material-icons'>add</i></a></td>";
+        echo "  <td><a class='btn btn-secondary' href='Decrease.php?id=".$component->id."&quantity=".$component->quantity."' role='button'><i class='material-icons'>remove</i></a></td>";
         echo "  <td><a class='btn btn-warning' href='Edit.php?id=".$component->id."' role='button'><i class='material-icons'>edit</i></a></td>";
         echo "  <td><a class='btn btn-danger' href='Delete.php?id=".$component->id."' role='button'><i class='material-icons'>close</i></a></td>";
         echo "</tr>";

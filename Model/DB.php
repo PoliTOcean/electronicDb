@@ -94,6 +94,21 @@
     return $return;
   }
 
+  function updateQuantity($conn,$identifier,$nq){
+    $return = 0;
+    $query = "DELETE  FROM Components WHERE id ='$identifier'";
+    $query = "UPDATE Components SET quantity = '$nq' WHERE id ='$identifier'";
+
+    if (!$res = mysqli_query ( $conn, $query )) {
+      $return = 0;
+    }else{
+      $return = 1;
+    }
+
+    //mysqli_free_result ( $res );
+    return $return;
+  }
+
   function retrieveComponents(){
     $return = 0;
     $conn = createConnection();

@@ -61,7 +61,7 @@
             	        </div> <!-- input-group.// -->
             	   </div> <!-- form-group// -->
             	   <div class="form-group">
-            	      <button type="submit"class="btn btn-primary">Login</button>
+            	      <button id="log" type="submit"class="btn btn-primary">Login</button>
             	   </div> <!-- form-group// -->
             	</form>
             </article>
@@ -80,6 +80,27 @@
         </div> <!-- END LOG IN FORM -->
       </div> <!-- END SECOND ELEMENT -->
     </div> <!-- END THE ROW -->
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="simpleQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">A simple question</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <b>Who is best?</b>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Computer Engineer</button>
+            <button type="button" class="btn btn-primary" id="wrondDecision" data-dismiss="modal">Electrical Engineer</button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div><!-- END THE PAGE CONTAINER -->
 
 
@@ -97,6 +118,17 @@
     }, 6000);
     </script>
 
+    <script>
+    $(window).on('load',function(){
+      $('#simpleQuestion').modal('show');
+    });
+
+    $( "#wrondDecision" ).click(function() {
+      //alert( "Handler for .click() called." );
+      $("#log").prop("disabled",true);
+    });
+    </script>
   </body>
+
 
 </html>
